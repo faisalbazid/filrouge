@@ -192,12 +192,38 @@ include('includes/dbconnection.php');
                 <li class="navbar-links"><a href="">HOME</a></li>
                 <li class="navbar-links"><a href="#services">SERVICES</a></li>
                 <li class="navbar-links"><a href="#TYPES">PROPRIÉTÉS</a></li>
-                <li class="navbar-links"><a href="">CONTACTEZ</a></li>
+                <!-- <li class="navbar-links"><a href="admin/login.php">Admin</a></li> -->
                 
+
+
+                <?php if (strlen($_SESSION['s_id_per']!=0)) {?>
+                                <a href="#" data-toggle="dropdown" class="Se déconnecter dropdown-toggle menu-item">MON COMPTE</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="user-profile.php">profile</a></li>
+                                    <li><a href="change-password.php">change mode de pass</a></li>
+                                   <li><a href="logout.php">Se déconnecter</a></li>
+                                </ul>
+                                <?php } ?>
+                            </li>
+                               <?php if (strlen($_SESSION['s_id_per']==0)) {?>
+                            <li class="navbar-links">
+                            <a href="admin/login.php">ADMIN</a>
+                               
+                            </li>
+                        <?php } ?>
+
+
+
+
+                        <?php if (strlen($_SESSION['s_id_per']==0)) {?>  
+                          <li class="navbar-links navbar-conx"><a href="login.php">CONNEXION</a>
+                            <!-- <a class="btn-popup" data-toggle="modal" data-target="#signupModule">Login</a> -->
+                            <?php } ?>
+
                 
-                <li class="navbar-links navbar-conx"><a href="login.php">CONNEXION</a>
+                <!-- <li class="navbar-links navbar-conx"><a href="login.php">CONNEXION</a> -->
                 
-                <li class="navbar-links"><button class="navbar-ajouter">+ AJOUTER PROPRIÉTÉ</button></li>
+                <li class="navbar-links"><button  class="navbar-ajouter"><a href="add-property.php">+ AJOUTER PROPRIÉTÉ</a></button></li>
             </ul>
     </nav>
 

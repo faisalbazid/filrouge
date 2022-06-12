@@ -50,11 +50,11 @@
     $query=mysqli_query($con,"SELECT `id_per`,`email`,`mdp` FROM `personne` WHERE `email`='$email' && `mdp`='$mdp'");
     $result=mysqli_fetch_array($query);
     if($result>0){
-// $_SESSION['ut']=$ret['UserType'];
+// $_SESSION['ut']=$result['id_per'];
 $_SESSION['s_id_per']=$result['id_per'];
 $_SESSION['s_email']=$result['email'];
    
-     header('location:user-profile.php');
+     header('location:add-property.php');
     }
     else{
    echo "<script>alert('Invalid Details');</script>";

@@ -11,11 +11,18 @@ echo "<script>window.location.href ='logout.php'</script>";
 
 if(isset($_POST['submit']))
   {
+$code_imo=mt_rand(0, 1000);
 
 $superficie=$_POST['superficie'];
 $prix=$_POST['prix'];
 $adress=$_POST['adress'];
 $type_imo=$_POST['type_imo'];
+$etat=$_POST['etat'];
+$salles_de_bains=$_POST['salles_de_bains'];
+$type_du_sol=$_POST['type_du_sol'];
+$etages=$_POST['etages'];
+$chambres=$_POST['chambres'];
+$capacité=$_POST['capacité'];
 $image1=$_FILES["image1"]["name"];
 $image2=$_FILES["image2"]["name"];
 $image3=$_FILES["image3"]["name"];
@@ -25,9 +32,9 @@ $type_ann=$_POST['type_ann'];
 $date=$_POST['date'];
 $detail_ann=$_POST['detail_ann'];
 $id_per=$_SESSION['s_id_per'];
-$code_imo=mt_rand(0, 1000);
 
-$query=mysqli_query($con,"INSERT INTO `immobilier`(`code_imo`,`superficie`,`prix`,`adress`,`type_imo`,`image1`,`image2`,`image3`) VALUES ('$code_imo','$superficie','$prix','$adress','$type_imo','$image1','$image2','$image3')");
+
+$query=mysqli_query($con,"INSERT INTO `immobilier`(`code_imo`, `superficie`, `prix`, `adress`, `type_imo`, `etat`, `salles_de_bains`, `type_du_sol`, `etages`, `chambres`, `capacité`, `image1`, `image2`, `image3`) VALUES ('$code_imo','$superficie','$prix','$adress','$type_imo','$etat','$salles_de_bains','$type_du_sol','$etages','$chambres','$capacité','$image1','$image2','$image3')");
   }
    if ($query) {
   $query2=mysqli_query($con,"INSERT INTO `annonce`(`titre_ann`,`type_ann`,`date`,`detail_ann`,`id_per`,`code_imo`) VALUES ('$titre_ann','$type_ann','$date','$detail_ann','$id_per','$code_imo')");
@@ -37,8 +44,8 @@ echo "<script>window.location.href ='add-property.php'</script>";
 
   else{
     
-        $msg= "Property detail has not been addeddd"; 
-    }
+    echo ''; 
+}
 }
 
 ?>
@@ -49,13 +56,23 @@ echo "<script>window.location.href ='add-property.php'</script>";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ajouter bien</title>
 </head>
 <body>
+    <style>
+        .InputFixed{
+            color: #858585;
+    border: solid 1px #d4d4d4;
+    background-color: #fbfbfb;
+    border-radius: 5px;
+    font-size: 14px;
+    display: inline-block;
+    min-height: 26px;
+    line-height: 1.75em;
+        }
+    </style>
 <form class="mb-0" method="post"  enctype="multipart/form-data">
-<p style="font-size:16px; color:red" align="center"> <?php if($msg){
-    echo $msg;
-  }  ?> </p>
+
                             <div class="">
                                 <div class="">
                                     <div class="">
@@ -64,14 +81,15 @@ echo "<script>window.location.href ='add-property.php'</script>";
                                     <!---->
                                     <div class="">
                                             <label for="">superficie*</label>
-                                            <input type="number"  name="superficie" id="superficie" required>
+                                              <input type="number"  name="superficie" id="superficie" required> 
+                                               <span class="InputFixed">m²</span>
                                         </div>
                                     <!---->
 
                                     <div class="">
                                     <label for="">prix*</label>
                                             <input type="number"  name="prix" id="prix" required>
-
+                                            <span class="InputFixed">DH</span>
                                         </div>
                                     
                                   <!---->
@@ -82,35 +100,88 @@ echo "<script>window.location.href ='add-property.php'</script>";
 
                                            <!---->
                                            <div >
-                                           <label for="">Type immo*</label>
+                                           <label for="">Type immobilier*</label>
                                             <div class="">
                                                 <i class="fa fa-angle-down"></i>
-                                                <select id="type_imo" name="type_imo">
+                                                <select id="type_imo" name="type_imo" required>
                                             <option value="">Selectionner type de immo</option>
-                                            <option>maison</option>
-                                            <option>riad</option>
-                                            <option>apparteme</option>
-                                            <option>--</option>
+                                            <option>Maisons</option>
+                                            <option>Riad</option>
+                                            <option>Villas & maisons de luxe</option>
+                                            <option>Locaux commerciaux</option>
+                                            <option>Bureaux</option>
+                                            <option>Appartements</option>
+                                            <option>Terrains</option>
+                                            <option>Fermes</option>
                                                 </select>
                                             </div>
                                            <!---->
-                                           
+                                            <!---->
+                                            <div >
+                                <label for="">Type du sol</label>
+                                            <div class="">
+                                                <i class="fa fa-angle-down"></i>
+                                                <select id="type_du_sol" name="type_du_sol">
+                                            <option value="">Selectionnez </option>
+                                            <option>Parquet</option>
+                                            <option>Marbre</option>
+                                            <option>Carrelage</option>
+                                            <option>Autre</option>
+                                                </select>
+                                            </div>
+                                           <!---->
+                                          
+                                    <div class="">
+                                            <label for="">Salles de bains</label>
+                                            <input type="number" maxlength="100" minlength="0" name="salles_de_bains" id="salles_de_bains" >
+                                        </div>
+
+                                           <!---->
+                                           <div class="">
+                                            <label for="">Etage du bien</label>
+                                            <input type="number" maxlength="100" minlength="0" name="etages" id="etages" >
+                                        </div>
+                                           <!---->
+                                             <!---->
+                                             <div class="">
+                                            <label for="">Chabmres</label>
+                                            <input type="number" maxlength="100" minlength="0" name="chambres" id="chambres" >
+                                        </div>
+                                           <!---->
+                                            <!---->
+                                            <div class="">
+                                            <label for="">capacité</label>
+                                            <input type="number" maxlength="100" minlength="0" name="capacité" id="capacité" >
+                                        </div>
+                                           <!---->
+                                           <div >
+                                <label for="">Etat d'immobilier*</label>
+                                            <div class="">
+                                                <i class="fa fa-angle-down"></i>
+                                                <select id="etat" name="etat" required>
+                                            <option value="">Selectionner état </option>
+                                            <option>Nouveau</option>
+                                            <option>Bon état</option>
+                                            <option>A rénover</option>
+                                               </select>
+                                            </div>
+                                           <!---->
                                         <div >
-                                            <label for="">Gallery Image1</label>
+                                            <label for="">Gallery Image1*</label>
                                             <input type="file"  name="image1" required>
                                         </div>
                                         <div >
-                                            <label for="">Gallery Image2</label>
+                                            <label for="">Gallery Image2*</label>
                                             <input type="file"  name="image2" required>
                                         </div>
                                         <div >
-                                            <label for="">Gallery Image3</label>
+                                            <label for="">Gallery Image3*</label>
                                             <input type="file"  name="image3" required>
                                         </div>
                                     <!---->
                                     <div class="">
                                             <label for="">Titre annonce*</label>
-                                            <input type="text"  name="titre_ann" id="titre_ann" required>
+                                            <input type="text"  name="titre_ann" id="titre_ann" rows="3" required>
                                         </div>
                                     <!---->
 
@@ -118,7 +189,7 @@ echo "<script>window.location.href ='add-property.php'</script>";
                                             <label for="">Type annonce*</label>
                                             <div class="">
                                                 <i class="fa fa-angle-down"></i>
-                                                <select id="type_ann" name="type_ann">
+                                                <select id="type_ann" name="type_ann" required>
                                             <option value="">Selectionner type de annonce</option>
                                             <option>location longue durée</option>
                                             <option>vente</option>
@@ -136,7 +207,7 @@ echo "<script>window.location.href ='add-property.php'</script>";
                                            <!---->
                                            <div >
                                             <label for="detail_ann">Detail annonce*</label>
-                                            <textarea  name="detail_ann" id="detail_ann" rows="3"></textarea>
+                                            <textarea  name="detail_ann" id="detail_ann" rows="3" required></textarea>
                                         </div>
                                 </div>
                                 <!-- .row end -->

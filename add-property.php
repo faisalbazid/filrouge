@@ -44,7 +44,7 @@ echo "<script>window.location.href ='add-property.php'</script>";
 
   else{
     
-    echo ''; 
+    echo ' '; 
 }
 }
 
@@ -71,151 +71,192 @@ echo "<script>window.location.href ='add-property.php'</script>";
     line-height: 1.75em;
         }
     </style>
+
+
+<section id="page-title" class="page-title bg-overlay bg-overlay-dark2">
+            <div class="bg-section">
+                <!-- <img src="images/appartemeen.jpg" alt="Background" /> -->
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+                        <div class="title title-1 text-center">
+                            <div class="title--content">
+                                <div class="title--heading">
+                                    <h1> AJOUTER UN BIEN</h1>
+                                </div>
+                                <ol class="breadcrumb">
+                                    <li><a href="index.php">Home /</a></li>
+                                    <li class="active">  &nbsp Ajouter un bien</li>
+                                </ol>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        </div>
+                    <!-- .col-md-12 end -->
+                </div>
+                <!-- .row end -->
+            </div>
+            <!-- .container end -->
+        </section>
+
+
+
 <form class="mb-0" method="post"  enctype="multipart/form-data">
 
-                            <div class="">
-                                <div class="">
-                                    <div class="">
-                                        <h2 class="form--title">Description de Propriété</h2>
-                                    </div>
+
+<div class="container">
+   
+
+    <div class="row">
+  <div class="col">
+    <!-- Name input -->
+    <div class="">
+      <h2 class="form--title">Description de bien</h2>
+  </div>
+  <!---->
+  <div class="">
+          <label for="">superficie*</label>
+            <input type="number"  name="superficie" id="superficie" required> 
+              <span class="InputF ixed">m²</span>
+      </div>
+  <!---->
+
+  <div class="">
+  <label for="">prix*</label>
+          <input type="number"  name="prix" id="prix" required>
+          <span class="InputF ixed">DH</span>
+      </div>
+  
+<!---->
+  <div class="">
+          <label for="">Adress*</label>
+          <input type="adress"  name="adress" id="adress" required>
+      </div>
+
+          <!---->
+          <div >
+          <label for="">Type immobilier*</label>
+          <div class="">
+              <i class="fa fa-angle-down"></i>
+              <select id="type_imo" name="type_imo" required>
+          <option value="">Selectionner type de immo</option>
+          <option>Maisons</option>
+          <option>Riad</option>
+          <option>Villas & maisons de luxe</option>
+          <option>Locaux commerciaux</option>
+          <option>Bureaux</option>
+          <option>Appartements</option>
+          <option>Terrains</option>
+          <option>Fermes</option>
+              </select>
+          </div>
+          <!---->
+          <!---->
+          <div >
+<label for="">Type du sol</label>
+          <div class="">
+              <i class="fa fa-angle-down"></i>
+              <select id="type_du_sol" name="type_du_sol">
+          <option value="">Selectionnez </option>
+          <option>Parquet</option>
+          <option>Marbre</option>
+          <option>Carrelage</option>
+          <option>Autre</option>
+              </select>
+          </div>
+          <!---->
+        
+  <div class="">
+          <label for="">Salles de bains</label>
+          <input type="number" maxlength="100" minlength="0" name="salles_de_bains" id="salles_de_bains" >
+      </div>
+
+          <!---->
+          <div class="">
+          <label for="">Etage du bien</label>
+          <input type="number" maxlength="100" minlength="0" name="etages" id="etages" >
+      </div>
+          <!---->
+            <!---->
+            <div class="">
+          <label for="">Chabmres</label>
+          <input type="number" maxlength="100" minlength="0" name="chambres" id="chambres" >
+      </div>
+          <!---->
+          <!---->
+          <div class="">
+          <label for="">capacité</label>
+          <input type="number" maxlength="100" minlength="0" name="capacité" id="capacité" >
+      </div>
+          <!---->
+          <div >
+<label for="">Etat d'immobilier*</label>
+          <div class="">
+              <i class="fa fa-angle-down"></i>
+              <select id="etat" name="etat" required>
+          <option value="">Selectionner état </option>
+          <option>Nouveau</option>
+          <option>Bon état</option>
+          <option>A rénover</option>
+              </select>
+          </div>
+          <!---->
+      <div >
+          <label for="">Gallery Image1*</label>
+          <input type="file"  name="image1" required>
+      </div>
+      <div >
+          <label for="">Gallery Image2*</label>
+          <input type="file"  name="image2" required>
+      </div>
+      <div >
+          <label for="">Gallery Image3*</label>
+          <input type="file"  name="image3" required>
+      </div>
+  <!---->
+  <div class="">
+          <label for="">Titre annonce*</label>
+          <input type="text"  name="titre_ann" id="titre_ann" rows="3" required>
+      </div>
+  <!---->
+
+  <div class="">
+          <label for="">Type annonce*</label>
+          <div class="">
+              <i class="fa fa-angle-down"></i>
+              <select id="type_ann" name="type_ann" required>
+          <option value="">Selectionner type de annonce</option>
+          <option>location longue durée</option>
+          <option>vente</option>
+          <option>location courte durée</option>
+          <option>location par nuit</option>
+              </select>
+          </div>
+      </div>
                                     <!---->
-                                    <div class="">
-                                            <label for="">superficie*</label>
-                                              <input type="number"  name="superficie" id="superficie" required> 
-                                               <span class="InputFixed">m²</span>
-                                        </div>
-                                    <!---->
+  <div class="">
+          <label for="">Date de publication*</label>
+          <input type="date"  name="date" id="date" required>
+      </div>
 
-                                    <div class="">
-                                    <label for="">prix*</label>
-                                            <input type="number"  name="prix" id="prix" required>
-                                            <span class="InputFixed">DH</span>
-                                        </div>
-                                    
-                                  <!---->
-                                    <div class="">
-                                            <label for="">Adress*</label>
-                                            <input type="adress"  name="adress" id="adress" required>
-                                        </div>
+          <!---->
+          <div >
+          <label for="detail_ann">Detail annonce*</label>
+          <textarea  name="detail_ann" id="detail_ann" rows="2" required></textarea>
+      </div>
+      <input type="submit" value="Submit" name="submit" style="background-color:#F25764"  class="btn">
 
-                                           <!---->
-                                           <div >
-                                           <label for="">Type immobilier*</label>
-                                            <div class="">
-                                                <i class="fa fa-angle-down"></i>
-                                                <select id="type_imo" name="type_imo" required>
-                                            <option value="">Selectionner type de immo</option>
-                                            <option>Maisons</option>
-                                            <option>Riad</option>
-                                            <option>Villas & maisons de luxe</option>
-                                            <option>Locaux commerciaux</option>
-                                            <option>Bureaux</option>
-                                            <option>Appartements</option>
-                                            <option>Terrains</option>
-                                            <option>Fermes</option>
-                                                </select>
-                                            </div>
-                                           <!---->
-                                            <!---->
-                                            <div >
-                                <label for="">Type du sol</label>
-                                            <div class="">
-                                                <i class="fa fa-angle-down"></i>
-                                                <select id="type_du_sol" name="type_du_sol">
-                                            <option value="">Selectionnez </option>
-                                            <option>Parquet</option>
-                                            <option>Marbre</option>
-                                            <option>Carrelage</option>
-                                            <option>Autre</option>
-                                                </select>
-                                            </div>
-                                           <!---->
-                                          
-                                    <div class="">
-                                            <label for="">Salles de bains</label>
-                                            <input type="number" maxlength="100" minlength="0" name="salles_de_bains" id="salles_de_bains" >
-                                        </div>
+  </div>  <?php include_once('includes/sidebar.php');?>
+</div>
 
-                                           <!---->
-                                           <div class="">
-                                            <label for="">Etage du bien</label>
-                                            <input type="number" maxlength="100" minlength="0" name="etages" id="etages" >
-                                        </div>
-                                           <!---->
-                                             <!---->
-                                             <div class="">
-                                            <label for="">Chabmres</label>
-                                            <input type="number" maxlength="100" minlength="0" name="chambres" id="chambres" >
-                                        </div>
-                                           <!---->
-                                            <!---->
-                                            <div class="">
-                                            <label for="">capacité</label>
-                                            <input type="number" maxlength="100" minlength="0" name="capacité" id="capacité" >
-                                        </div>
-                                           <!---->
-                                           <div >
-                                <label for="">Etat d'immobilier*</label>
-                                            <div class="">
-                                                <i class="fa fa-angle-down"></i>
-                                                <select id="etat" name="etat" required>
-                                            <option value="">Selectionner état </option>
-                                            <option>Nouveau</option>
-                                            <option>Bon état</option>
-                                            <option>A rénover</option>
-                                               </select>
-                                            </div>
-                                           <!---->
-                                        <div >
-                                            <label for="">Gallery Image1*</label>
-                                            <input type="file"  name="image1" required>
-                                        </div>
-                                        <div >
-                                            <label for="">Gallery Image2*</label>
-                                            <input type="file"  name="image2" required>
-                                        </div>
-                                        <div >
-                                            <label for="">Gallery Image3*</label>
-                                            <input type="file"  name="image3" required>
-                                        </div>
-                                    <!---->
-                                    <div class="">
-                                            <label for="">Titre annonce*</label>
-                                            <input type="text"  name="titre_ann" id="titre_ann" rows="3" required>
-                                        </div>
-                                    <!---->
+    
 
-                                    <div class="">
-                                            <label for="">Type annonce*</label>
-                                            <div class="">
-                                                <i class="fa fa-angle-down"></i>
-                                                <select id="type_ann" name="type_ann" required>
-                                            <option value="">Selectionner type de annonce</option>
-                                            <option>location longue durée</option>
-                                            <option>vente</option>
-                                            <option>location courte durée</option>
-                                            <option>location par nuit</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                                                      <!---->
-                                    <div class="">
-                                            <label for="">Date de publication*</label>
-                                            <input type="date"  name="date" id="date" required>
-                                        </div>
-
-                                           <!---->
-                                           <div >
-                                            <label for="detail_ann">Detail annonce*</label>
-                                            <textarea  name="detail_ann" id="detail_ann" rows="3" required></textarea>
-                                        </div>
-                                </div>
-                                <!-- .row end -->
-                            </div>
-                            <!-- .form-box end -->
-                            <input type="submit" value="Submit" name="submit" style="background-color:#F25764"  class="btn">
-
-                        </form>
-              
+      </div>                        
+    
+</form>
+            
 </body>
 </html>
+

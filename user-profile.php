@@ -71,7 +71,7 @@ if (strlen($_SESSION['s_id_per']==0)) {
         <section id="user-profile" class="user-profile">
             <div class="container">
                 <div class="row">
-                  
+                <?php include_once('includes/sidebar.php');?>
                     <!-- .col-md-4 -->
                     <div class="col-xs-12 col-sm-12 col-md-8">
 
@@ -89,7 +89,7 @@ $result=mysqli_query($con,"select * from personne where id_per='$id_per'");
 while ($row=mysqli_fetch_array($result)) {
 
 ?>
-                                <h4 class="form--title">Détails personnels</h4>
+                                <h4 class="form--title">Détails personnels </h4> <br>
                                 <div class="form-group">
                                     <label for="nom">Nom Complet :</label>
                                     <input type="text" class="form-control" name="nom" id="nom" required="true" value="<?php  echo $row['nom'];?>">

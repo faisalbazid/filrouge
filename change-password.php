@@ -49,10 +49,40 @@ return true;
 </script>
 </head>
 <body>
+
+<section id="page-title" class="page-title bg-overlay bg-overlay-dark2">
+            <div class="bg-section">
+                <!-- <img src="images/appartemeen.jpg" alt="Background" /> -->
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+                        <div class="title title-1 text-center">
+                            <div class="title--content">
+                                <div class="title--heading">
+                                    <h1> MODIFIER MOT DE PASSE</h1>
+                                </div>
+                                <ol class="breadcrumb">
+                                    <li><a href="index.php">Home /</a></li>
+                                    <li class="active">  &nbsp Modifier mot de passe</li>
+                                </ol>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        </div>
+                    <!-- .col-md-12 end -->
+                </div>
+                <!-- .row end -->
+            </div>
+            <!-- .container end -->
+        </section>
+
+        
 <section id="user-profile" class="user-profile">
             <div class="container">
                 <div class="row">
-              
+                <?php include_once('includes/sidebar.php');?>
                     <!-- .col-md-4 -->
                     <div class="col-xs-12 col-sm-12 col-md-8">
 
@@ -71,18 +101,18 @@ while ($row=mysqli_fetch_array($result)) {
     echo $msg;
   }  ?> </p>
                                 <div class="form-box">
-                                <h4 class="form--title">Change Password</h4>
+                                <h4 class="form--title">Modifier mot de passe /</h4><br>
                                 <div class="form-group">
-                                    <label for="password">Current Password</label>
+                                    <label for="password">Mot de passe actuel</label>
                                     <input type="password" name="currentpassword" id="currentpassword" class="form-control" value="" required='true'>
                                 </div>
                                 <div class="form-group">
-                                    <label for="password">New Password</label>
+                                    <label for="password">Nouveau mot de passe</label>
                                     <input type="password" name="newpassword" id="newpassword" class="form-control" value="" required='true'>
                                 </div>
                                 <!-- .form-group end -->
                                 <div class="form-group">
-                                    <label for="confirm-password">Confirm Password</label>
+                                    <label for="confirm-password">Confirmez le mot de passe</label>
                                     <input type="password" name="confirmpassword" id="confirmpassword" class="form-control" value="" required='true'>
                                 </div>
                                 <!-- .form-group end -->

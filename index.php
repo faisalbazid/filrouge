@@ -23,64 +23,43 @@ include('includes/dbconnection.php');
     --color-blue: #4843D9;
     --color-blue2: #2D1859;
     --color-pink:#F25764 ;
-    
-}
-        *{
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
+    }
+   
+    *{
+            padding:0;
+            margin:0;
+            box-sizing:border-box;
             font-family: 'Ubuntu', sans-serif;
-            
-                }
-               
-                .navbar {
-                    padding: 0;
-                    margin-bottom: -15px;
-                    }
-                
-        .navbar-logo img{
+                 }     
+                 .navbar{
+                    background-color: var(--color-blue2);
+                    
+                 } 
+                 .navbar a {
+                    color: var(--color-white);
+                 }
+                 .nav-link:hover{
+                    background-color: var(--color-orange);
+                    color: var(--color-blue2);
+                 }      
+     nav img{
            width: 175px;
            height: 60px;
-           flex:1;
            user-select:none;
-           margin-right: 330px;
-           margin-left:30px
+           padding-right: 330px;
+           padding-left:30px
         }
-
-        .navbar ul{
-            display:flex;
-            width:100%;
-            height: 100px;
-            align-items: center;
-            background-color: var(--color-blue2);
-            color: var(--color-white);
+        nav .btn-conx{
+            margin-left:200px;
+           
         }
-        .navbar li{
-            list-style-type: none;
-            padding: 0.8rem;
-        }
-        .navbar a{
-            text-decoration: none;
-            color: var(--color-white);
-        }
-        .navbar-toggle{
-        display: none;
-        }
-        .navbar-conx{
-            margin-left: 70px;
-        }
-        .navbar-ajouter{
+        nav .btn-ajout{
+           
             background-color: var(--color-orange);
         }
-        
-        .navbar-links:hover{
-            background-color: var(--color-orange);
-        }
-        .navbar-links:hover a{
-            color: var(--color-blue);
-        }
-        .carousel-inner{
-            height: calc(100vh - 120px);
+        nav .btn:hover{
+            background-color: var(--color-blue);
+            color: var(--color-white);
         }
         .card-title{
             position: absolute;
@@ -101,7 +80,7 @@ include('includes/dbconnection.php');
         .SERVICES,.TYPES h1{
             text-align: center;
             color: var(--color-blue2);
-            margin: 40px;
+            margin: 40px 0px;
             text-decoration: underline;
             text-decoration-color: var(--color-pink);
            
@@ -112,7 +91,7 @@ include('includes/dbconnection.php');
             border-radius: 15px;
             
         }
-.footer1{
+        .footer1{
     background-color: var(--color-blue2);
 }
 
@@ -142,93 +121,64 @@ include('includes/dbconnection.php');
     color:var(--color-orange);
     
 }
-.foot-logo{
-    width: auto;
-}
-.footer img{
-    width: 200px;
-    height: 100px;
-}
+</style>
+
+
+<nav class="navbar navbar-expand-lg">
+ 
+  <img src="">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#services">Services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#type">Immobiliers</a>
+      </li>
+
+
+      <li class="nav-item dropdown">
+      <?php if (strlen($_SESSION['s_id_per']!=0)) {?>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Mon Compte
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="user-profile.php">Profil de l'utilisateur</a>
+          <a class="dropdown-item" href="change-password.php">Changer le mot de passe</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="logout.php">Se déconnecter</a>
+        </div>
+        <?php } ?>
+      </li>
+
+      <?php if (strlen($_SESSION['s_id_per']==0)) {?>
+      <li class="nav-item">
+        <a class="nav-link" href="admin/login.php">ADMIN</a>
+      </li>
+      <?php } ?>
 
         
-        
-        @media (max-width:990px){
-            .navbar ul{
-                flex-wrap: wrap;
-            }
-            .navbar-toggle{
-                display: block;
-            }
-            .navbar-links{
-                display: none;
-                width: 100%;
-                text-align: center;
-                z-index: 11;
-                background-color: var(--color-blue2);
-            }
-            .active{
-                display: block;
-            }
-            .navbar-conx{
-            margin-left: 0;
-        }
-        
-        }
-        @media (max-width:640px){
-            .navbar-logo img{
-           width: 100px;
-           margin-right: 120px;
-           
-        }
-        
-        }
-    </style>
-
-    <nav class="navbar">
-                 <ul>
-                <li class="navbar-logo"><img src="images/logo.png" ></li>
-                <li class="navbar-toggle"><i class="fas fa-bars"></i></li>
-                
-                <li class="navbar-links"><a href="">HOME</a></li>
-                <li class="navbar-links"><a href="#services">SERVICES</a></li>
-                <li class="navbar-links"><a href="#TYPES">PROPRIÉTÉS</a></li>
-                <!-- <li class="navbar-links"><a href="admin/login.php">Admin</a></li> -->
-                
-
-
-                <?php if (strlen($_SESSION['s_id_per']!=0)) {?>
-                                <a href="#" data-toggle="dropdown" class="Se déconnecter dropdown-toggle menu-item">MON COMPTE</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="user-profile.php">profile</a></li>
-                                    <li><a href="change-password.php">change mode de pass</a></li>
-                                   <li><a href="logout.php">Se déconnecter</a></li>
-                                </ul>
-                                <?php } ?>
-                            </li>
-                               <?php if (strlen($_SESSION['s_id_per']==0)) {?>
-                            <li class="navbar-links">
-                            <a href="admin/login.php">ADMIN</a>
-                               
-                            </li>
-                        <?php } ?>
+      <li class="nav-item">
+        <?php if (strlen($_SESSION['s_id_per']==0)) {?> 
+      <button type="submit" class="btn btn-conx"><a href="login.php">CONNEXION</a></button>
+      <?php } ?>
+      <button class="btn btn-ajout" type="button"> <a href="add-property.php">+ Ajouter un bien</a></button>
+      </li>
+     
+    </ul>
+      </div>
+</nav>
 
 
 
-
-                        <?php if (strlen($_SESSION['s_id_per']==0)) {?>  
-                          <li class="navbar-links navbar-conx"><a href="login.php">CONNEXION</a>
-                            <!-- <a class="btn-popup" data-toggle="modal" data-target="#signupModule">Login</a> -->
-                            <?php } ?>
-
-                
-                <!-- <li class="navbar-links navbar-conx"><a href="login.php">CONNEXION</a> -->
-                
-                <li class="navbar-links"><button  class="navbar-ajouter"><a href="add-property.php">+ AJOUTER PROPRIÉTÉ</a></button></li>
-            </ul>
-    </nav>
-
-
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             
           <div class="carousel-item active">
@@ -251,10 +201,9 @@ include('includes/dbconnection.php');
           <span class="sr-only">Next</span>
         </a>
       </div>
-<hr>
-       <!-- SERVICES -->
-       <section class="SERVICES" id="services">
-       <h1>SERVICES</h1>
+
+      <section class="SERVICES" id="services">
+       <h1 class="text-center">SERVICES</h1>
        <div class="card-group">
           <div class="card">
           <img src="images/vacances.jpg" class="card-img-top" alt="...">
@@ -281,10 +230,11 @@ include('includes/dbconnection.php');
       </div>
     </section>
 
-    <!-- TYPES -->
+
     <section class="TYPES">
-        <h1>Explorer par type de propriété</h1>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <h1 class="text-center">Explorer par type de propriété</h1>
+        <div class="container">
+        <div class="row row-cols-3 row-cols-md-3 g-3">
             <div class="col">
               <div class="card">
                 <img src="images/maison.jpg" class="card-img-top" alt="...">
@@ -357,13 +307,14 @@ include('includes/dbconnection.php');
             </div>
           </div>
         </div>
+        </div>
      </section>
     <!-- FOOTER -->
     <footer class="footer footer1">
         <div class="container pt-5 pb-5">
             <div class="row">
                 <div class="col-md-6 mb-5">
-                    <img class="foot-logo" src="images/logo.png" alt="Logo School">
+                    <img class="foot-logo" src="images/lo go.png" alt="logo error">
                 </div>
 
                 <div class="col-md-6">
@@ -408,19 +359,12 @@ include('includes/dbconnection.php');
             
         </div>
     </footer>
-    
-    <script>
-        const togglebutton = document.getElementsByClassName('navbar-toggle')[0];
-        const navbarlinks = document.getElementsByClassName('navbar-links');
-        
-        togglebutton.addEventListener('click',function() {
-            for(var i=0; i<navbarlinks.length; i++)
-            navbarlinks[i].classList.toggle('active')
-        });
-        </script>
-            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-</body>
+            </body>
 </html>

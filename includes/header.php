@@ -43,8 +43,7 @@ include('includes/dbconnection.php');
                     color: var(--color-blue2);
                  }      
      nav img{
-           width: 175px;
-           height: 60px;
+          
            user-select:none;
            padding-right: 330px;
            padding-left:30px
@@ -96,8 +95,7 @@ include('includes/dbconnection.php');
 
 
 <nav class="navbar navbar-expand-lg">
- 
-  <img src="">
+<img src="images/logo.png"  alt="error logo" width="500" height="100">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

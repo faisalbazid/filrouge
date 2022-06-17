@@ -42,12 +42,15 @@ include('includes/dbconnection.php');
                     background-color: var(--color-orange);
                     color: var(--color-blue2);
                  }      
-     nav img{
-           width: 175px;
-           height: 60px;
+     .navbar img{
+           
            user-select:none;
            padding-right: 330px;
            padding-left:30px
+        }
+        .foot-logo{
+          width: 170px;
+           height: 90px;
         }
         nav .btn-conx{
             margin-left:200px;
@@ -61,13 +64,37 @@ include('includes/dbconnection.php');
             background-color: var(--color-blue);
             color: var(--color-white);
         }
-        .card-title{
+        .card-title {
             position: absolute;
              top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             color: var(--color-white);
             font-weight: 800;
+        }
+        .cont-slide h2 {
+            position: absolute;
+             top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--color-white);
+            font-weight: 800;
+            font-size:3rem;
+        }
+        .voir-plus{
+          position: absolute;
+             top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--color-blue2);
+            background-color:var(--color-orange);
+            padding:10px;
+            border-radius:10px;
+           
+        }
+        .w-100{
+          filter: brightness(66%); 
+          height:575px;
         }
         
         .SERVICES .card-img-top{
@@ -126,7 +153,7 @@ include('includes/dbconnection.php');
 
 <nav class="navbar navbar-expand-lg">
  
-  <img src="">
+  <img src="images/logo.png"  alt="error logo" width="500" height="100">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -180,8 +207,7 @@ include('includes/dbconnection.php');
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-            
-          <div class="carousel-item active">
+                    <div class="carousel-item active">
             <img class="d-block w-100" src="images/slide3.jpg" alt="First slide">
             
           </div>
@@ -189,7 +215,7 @@ include('includes/dbconnection.php');
             <img class="d-block w-100" src="images/slide2.jpg" alt="Second slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="images/slide1.jpg" alt="Third slide">
+                    <img class="d-block w-100" src="images/slide1.jpg" alt="Third slide">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -202,6 +228,11 @@ include('includes/dbconnection.php');
         </a>
       </div>
 
+      <div class="cont-slide">
+      <h2>Trouvez votre propriété idéale</h2>
+      <button ><a class="voir-plus">Voir plus</a><button>
+        </div>
+      
       <section class="SERVICES" id="services">
        <h1 class="text-center">SERVICES</h1>
        <div class="card-group">
@@ -314,7 +345,7 @@ include('includes/dbconnection.php');
         <div class="container pt-5 pb-5">
             <div class="row">
                 <div class="col-md-6 mb-5">
-                    <img class="foot-logo" src="images/lo go.png" alt="logo error">
+                    <img class="foot-logo" src="images/logo.png" alt="logo error">
                 </div>
 
                 <div class="col-md-6">

@@ -126,7 +126,7 @@ echo "<script>window.location.href ='add-property.php'</script>";
   <div class="">
   <label for="">prix*</label>
           <input type="number"  name="prix" id="prix" required>
-          <span class="InputF ixed">DH</span>
+          <span class="InputFixed">DH</span>
       </div>
   
 <!---->

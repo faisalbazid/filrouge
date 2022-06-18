@@ -43,10 +43,10 @@ include('includes/dbconnection.php');
                     color: var(--color-blue2);
                  }      
      .navbar img{
-           
-           user-select:none;
-           padding-right: 330px;
-           padding-left:30px
+           padding-right:250px;
+           padding-left:30px;
+           width:500px;
+            height:100px;
         }
         .foot-logo{
           width: 170px;
@@ -72,18 +72,18 @@ include('includes/dbconnection.php');
             color: var(--color-white);
             font-weight: 800;
         }
-        .cont-slide h2 {
+        .cont-slide p {
             position: absolute;
-             top: 40%;
+             top: 55%;
             left: 50%;
             transform: translate(-50%, -50%);
             color: var(--color-white);
             font-weight: 800;
-            font-size:3rem;
+            font-size:1.8em;
         }
         .voir-plus{
           position: absolute;
-             top: 50%;
+             top: 70%;
             left: 50%;
             transform: translate(-50%, -50%);
             color: var(--color-blue2);
@@ -96,7 +96,16 @@ include('includes/dbconnection.php');
           filter: brightness(66%); 
           height:575px;
         }
-        
+        .navbar-toggler span{
+          background-color:var(--color-orange);
+          height:20px;
+        }
+        .navbar-toggler{
+          padding-right:100px;
+        }
+        .dropdown-menu{
+          background-color:var(--color-blue);
+        }
         .SERVICES .card-img-top{
             filter: brightness(50%);
             height: 500px;
@@ -148,14 +157,23 @@ include('includes/dbconnection.php');
     color:var(--color-orange);
     
 }
+
+@media screen and (max-width: 470px) {
+  .navbar img{
+           display:none;
+        }
+        .cont-slide p {
+           font-size:1.5em;
+        }
+}
 </style>
 
 
 <nav class="navbar navbar-expand-lg">
  
-  <img src="images/logo.png"  alt="error logo" width="500" height="100">
+  <img src="images/logo.png"  alt="error logo" >
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon"> <i class="fa-solid fa-bars"></i></i></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -167,7 +185,7 @@ include('includes/dbconnection.php');
         <a class="nav-link" href="#services">Services</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#type">Immobiliers</a>
+        <a class="nav-link" href="immobiliers.php">Immobiliers</a>
       </li>
 
 
@@ -229,7 +247,7 @@ include('includes/dbconnection.php');
       </div>
 
       <div class="cont-slide">
-      <h2>Trouvez votre propriété idéale</h2>
+      <p>Trouvez votre propriété idéale</p>
       <button ><a class="voir-plus">Voir plus</a><button>
         </div>
       

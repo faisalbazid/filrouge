@@ -41,7 +41,7 @@ if (strlen($_SESSION['s_id_per']==0)) {
                                     <h1> Mes propriétés</h1>
                                 </div>
                                 <ol class="breadcrumb">
-                                    <li><a href="index.php">Home /</a></li>
+                                    <li><a href="user-profile.php">Home /</a></li>
                                     <li class="active">  &nbsp mes propriétés</li>
                                 </ol>
                             </div>

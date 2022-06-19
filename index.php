@@ -43,9 +43,9 @@ include('includes/dbconnection.php');
                     color: var(--color-blue2);
                  }      
      .navbar img{
-           padding-right:250px;
+           padding-right:100px;
            padding-left:30px;
-           width:500px;
+           width:400px;
             height:100px;
         }
         .foot-logo{
@@ -53,7 +53,7 @@ include('includes/dbconnection.php');
            height: 90px;
         }
         nav .btn-conx{
-            margin-left:200px;
+            margin-left:150px;
            
         }
         nav .btn-ajout{
@@ -74,16 +74,16 @@ include('includes/dbconnection.php');
         }
         .cont-slide p {
             position: absolute;
-             top: 55%;
+             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             color: var(--color-white);
-            font-weight: 800;
-            font-size:1.8em;
+            font-weight:bold;
+            font-size:3em;
         }
         .voir-plus{
           position: absolute;
-             top: 70%;
+             top: 60%;
             left: 50%;
             transform: translate(-50%, -50%);
             color: var(--color-blue2);
@@ -158,12 +158,36 @@ include('includes/dbconnection.php');
     
 }
 
+@media screen and (max-width: 1260px) {
+  nav .btn-conx{
+            margin-left:80px;
+           
+        }
+        .navbar img{
+           padding-right:60px;
+            width:250px;
+            height:70px;
+        }
+        .cont-slide p {
+           font-size:2.2em;
+           top: 40%;
+        }
+        .voir-plus{
+             top: 50%;
+                    
+        }
+}
 @media screen and (max-width: 470px) {
   .navbar img{
            display:none;
         }
         .cont-slide p {
-           font-size:1.5em;
+           font-size:1.8em;
+           top: 30%;
+        }
+        .voir-plus{
+             top: 45%;
+                    
         }
 }
 </style>
@@ -248,7 +272,7 @@ include('includes/dbconnection.php');
 
       <div class="cont-slide">
       <p>Trouvez votre propriété idéale</p>
-      <button ><a class="voir-plus">Voir plus</a><button>
+      <button ><a href="immobiliers.php" class="voir-plus">Voir plus</a><button>
         </div>
       
       <section class="SERVICES" id="services">

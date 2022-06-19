@@ -86,7 +86,7 @@ echo "<script>window.location.href ='add-property.php'</script>";
                                     <h1> AJOUTER UN BIEN</h1>
                                 </div>
                                 <ol class="breadcrumb">
-                                    <li><a href="index.php">Home /</a></li>
+                                    <li><a href="user-profile.php">Home /</a></li>
                                     <li class="active">  &nbsp Ajouter un bien</li>
                                 </ol>
                             </div>

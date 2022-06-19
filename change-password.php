@@ -63,7 +63,7 @@ return true;
                                     <h1> MODIFIER MOT DE PASSE</h1>
                                 </div>
                                 <ol class="breadcrumb">
-                                    <li><a href="index.php">Home /</a></li>
+                                    <li><a href="user-profile.php">Home /</a></li>
                                     <li class="active">  &nbsp Modifier mot de passe</li>
                                 </ol>
                             </div>

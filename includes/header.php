@@ -15,8 +15,8 @@ include('includes/dbconnection.php');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
 <body>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
+<style>
+          @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
         :root{
     --color-white: #F2F2F2 ;
     --color-orange: #F2B66D ; 
@@ -42,14 +42,15 @@ include('includes/dbconnection.php');
                     background-color: var(--color-orange);
                     color: var(--color-blue2);
                  }      
-     nav img{
-          
-           user-select:none;
-           padding-right: 330px;
-           padding-left:30px
+     .navbar img{
+           padding-right:100px;
+           padding-left:30px;
+           width:400px;
+            height:100px;
         }
+        
         nav .btn-conx{
-            margin-left:200px;
+            margin-left:150px;
            
         }
         nav .btn-ajout{
@@ -60,44 +61,45 @@ include('includes/dbconnection.php');
             background-color: var(--color-blue);
             color: var(--color-white);
         }
+      
+        .navbar-toggler span{
+          background-color:var(--color-orange);
+          height:20px;
+        }
+        .navbar-toggler{
+          padding-right:100px;
+        }
+        .dropdown-menu{
+          background-color:var(--color-blue);
+        }
         
-        .footer1{
-    background-color: var(--color-blue2);
-}
 
-.footer *{
-    color: var(--color-white);
+@media screen and (max-width: 1260px) {
+  nav .btn-conx{
+            margin-left:80px;
+           
+        }
+        .navbar img{
+           padding-right:60px;
+            width:250px;
+            height:70px;
+        }
+        
 }
-.foot-col h4{
-    font-weight: 500;
-    margin-bottom: 40px;
-    position: relative;
-    font-size: 1em;
+@media screen and (max-width: 470px) {
+  .navbar img{
+           display:none;
+        }
+       
 }
-.foot-col h4:after{
-    content: "";
-    width: 20px;
-    height: 4px;
-    background-color:var(--color-pink);
-    display: block;
-    position: absolute;
-    top:32px;
-}
-.foot-col p{
-    line-height: 30px;
-    margin-bottom: 5px;
-}
-.foot-col a:hover{
-    color:var(--color-orange);
-    
-}
-</style>
+</style>   
 
 
 <nav class="navbar navbar-expand-lg">
-<img src="images/logo.png"  alt="error logo" width="500" height="100">
+ 
+  <img src="images/logo.png"  alt="error logo" >
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon"> <i class="fa-solid fa-bars"></i></i></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -109,7 +111,7 @@ include('includes/dbconnection.php');
         <a class="nav-link" href="#services">Services</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#type">Immobiliers</a>
+        <a class="nav-link" href="immobiliers.php">Immobiliers</a>
       </li>
 
 
@@ -138,7 +140,7 @@ include('includes/dbconnection.php');
         <?php if (strlen($_SESSION['s_id_per']==0)) {?> 
       <button type="submit" class="btn btn-conx"><a href="login.php">CONNEXION</a></button>
       <?php } ?>
-      <button class="btn btn-ajout" type="button"> + Ajouter un bien</button>
+      <button class="btn btn-ajout" type="button"> <a href="add-property.php">+ Ajouter un bien</a></button>
       </li>
      
     </ul>

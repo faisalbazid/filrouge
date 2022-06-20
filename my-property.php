@@ -25,8 +25,19 @@ if (strlen($_SESSION['s_id_per']==0)) {
             width:300px;
             height:300px;
         }
+        .sidebar{
+            display:flex;
+            margin-left:100px;
+            
+        }
+       .card-pro{
+        display:flex;
+        justify-content:space-between;
+        
+       }
     </style>
-<section id="page-title" class="page-title bg-overlay bg-overlay-dark2">
+<section class="my-pro">
+
             <div class="bg-section">
                 <!-- <img src="images/appartemeen.jpg" alt="Background" /> -->
             </div>
@@ -47,20 +58,37 @@ if (strlen($_SESSION['s_id_per']==0)) {
                             </div>
                             <div class="clearfix"></div>
                         </div>
- <?php include_once('includes/sidebar.php');?>
+ 
                         </div>
-                    <!-- .col-md-12 end -->
+                  
                 </div>
-                <!-- .row end -->
+               
             </div>
-            <!-- .container end -->
+           
         </section>
-       
+        <section class="sidebar">
+  <div class="card" style="width: 18rem; height: 30rem;">
+  <ol  style="list-style-type:upper-roman" class="list-group list-group-flush">
+  <?php if($_SESSION['s_id_per']==0){?>
+  
+  <?php } else{?>
+      <li><a href="user-profile.php" class="active">Modifier le profil</a></li>
+      <li><a href="change-password.php">Modifier le mot de passe</a></li>
+      <li><a href="add-property.php">Ajouter un bien</a></li>
+      <li><a href="my-property.php">Mes biens</a></li>
+      <li><a href="#">Demande reçue</a></li>
+
+  
+          <li><a href="#">Demandes répondues</a></li>
+      <li><a href="logout.php">Se déconnecter</a></li>
+
+  <?php } ?>
+  </ol>
+</div>
+<section>
+
         
-        <section id="my-properties" class="my-properties properties-list">
-            <div class="container">
-                <div class="row">
-        <div class="col-xs-12 col-sm-8 col-md-8">
+        
                       <?php
                      $id_per=$_SESSION['s_id_per'];
                
@@ -76,8 +104,9 @@ if($num>0){
 while($row=mysqli_fetch_array($query))
 {
 ?>
-                        <div class="container">
-<div class="card" style="width: 18rem;">
+<section class="card-pro">
+<div class="container">
+<div class="card " style="width: 18rem;">
 <a href="single-property-detail.php?code-imo=<?php echo $row['code_imo'];?>">
   <img class="card-img-top" src="image_client/<?php echo $row['image1'];?>">
   
@@ -97,14 +126,7 @@ while($row=mysqli_fetch_array($query))
                                 <?php } } else { ?>
    <h3 style="color:red" align="center"> Aucune propriété ajoutée pour le moment </h3>
         <?php } ?>  
-        </div>
-                    <!-- .col-md-8 end -->
-                </div>
-
-                                </div>
-                <!-- .row end -->
-            </div>
-            <!-- .container end -->
+       
         </section>                                  
 </body>
 

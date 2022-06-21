@@ -1,3 +1,8 @@
+<?php
+session_start();
+error_reporting(0);
+include('includes/dbconnection.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,15 +12,30 @@
     <title>Document</title>
 </head>
 <style>
+   :root{
+    --color-white: #F2F2F2 ;
+    --color-orange: #F2B66D ; 
+    --color-blue: #4843D9;
+    --color-blue2: #2D1859;
+    --color-pink:#F25764 ;
+    }
+  
    .card img{
    height: 250px;
    }
    .widget{
-    background-color:var(--color-orange);
+   
+    margin-top:100px;
+
    }
    .vh-100 .btn{
     background-color:var(--color-blue);
     color:var(--color-white);
+    
+   }
+   .vh-100{
+    display:flex;
+    justify-content:space-between;
    }
 </style>
 <body>
@@ -152,17 +172,47 @@ while ($row=mysqli_fetch_array($query)) {
                   class="img-fluid" alt="Sample image">
 
               </div>
+
+              
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>                     
+  <div class="card card-info bg-secondary" style="max-height:15rem;width:300px;">
+  <?php 
+$id_per=$_SESSION['s_id_per'];
+// $code_imo=$_GET['code_imo'];
+$query1=mysqli_query($con,"SELECT * FROM `personne` WHERE id_per='$id_per'");
+// $query1=mysqli_query($con,"SELECT * FROM `immobilier` WHERE code_imo='$code_imo'");
+// $num=mysqli_num_rows($query1);
+while ($row2=mysqli_fetch_array($query1)) {
+?>
+  <div class="card-header"> <?php if($row2['type_per']=="1"){?>
+                                <h5>Publiée by utilisateur</h5>
+                            <?php } else{ ?>
+                             <h5>Publié par agent</h5>
+                         <?php } ?>
+                        </div>
+  <div class="card-body card-header" >
+    <h5 class="card-title "></h5>
+    <p class="card-text "><?php echo $row2['nom'];?></p>
+    <ul class="list-unstyled">
+                                        <li><i class="fa fa-phone"></i><?php echo $row2['tel'];?></li>
+                                        <li><i class="fa fa-envelope"></i><?php echo $row2['email'];?></li>
+                                       
+                                    </ul>
+  </div>
+</div>
+                            </div>
+<?php } ?>
+</section>   
+
+
+
 </body>
 </html>
-
-
 
 
 

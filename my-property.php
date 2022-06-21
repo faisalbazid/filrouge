@@ -116,7 +116,7 @@ while($row=mysqli_fetch_array($query))
     <p class="card-text"><span class=""><?php echo $row['etat'];?></span> / &nbsp<?php echo $row['adress'];?></p>
       </div>
 
-     <a href="edit-property.php?edit-imo=<?php echo $row['code_imo'];?>" class=""><i class="fa fa-edit"></i> Modifier</a>
+     <a href="modifier-property.php?edit-imo=<?php echo $row['code_imo'];?>" class=""><i class="fa fa-edit"></i> Modifier</a>
       <a href="delete-property.php?delete-imo=<?php echo $row['code_imo'];?>" class=""><i class="fa fa-remove"></i>   Supprimer</a>
 </div>
   </div>

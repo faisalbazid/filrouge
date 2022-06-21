@@ -16,7 +16,7 @@ if (strlen($_SESSION['s_id_per']==0)) {
    
        $query=mysqli_query($con, "update personne set nom ='$nom', tel='$tel', adress='$adress' where id_per='$id_per'");
       if ($query) {
-      $msg="Le profil utilisateur a été mis à jour.";
+      $msg="Le profil a été mis à jour.";
     }
     else
       {
